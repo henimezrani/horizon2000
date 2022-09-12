@@ -38,6 +38,13 @@ function Seo({ description, title, children }) {
       <meta name="twitter:creator" content={site.siteMetadata?.author || ``} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
+      {/* <style>@import url('http://fonts.cdnfonts.com/css/raleway-5');</style> */}
+      <style>
+        @import url('http://fonts.cdnfonts.com/css/aqua-grotesque');
+        @import url('http://fonts.cdnfonts.com/css/klein-trial');
+        @import url('http://fonts.cdnfonts.com/css/austen');
+        @import url('http://fonts.cdnfonts.com/css/mada');
+      </style>
       {children}
     </>
   )

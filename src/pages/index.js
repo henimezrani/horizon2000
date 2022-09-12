@@ -9,27 +9,15 @@ import Contact from "../components/sections/contact"
 import Engagements from "../components/sections/engagements"
 import Equipments from "../components/sections/equipments"
 
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
-  },
-  { text: "Server Side Rendering", url: "using-ssr" },
-]
-
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
     <History />
+    <Engagements />
+    <Equipments />
     <Accompagnement />
     <Ambitions />
     <Contact />
-    <Engagements />
-    <Equipments />
-    <ul></ul>
   </Layout>
 )
 
