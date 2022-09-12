@@ -89,18 +89,20 @@ const Header = () => {
             {/* Mobile Menu Container */}
             {navOpen ? (
               <div className="absolute z-10 top-0 inset-x-0 p-2 transform origin-top-left lg:hidden">
-                <div className="shadow-lg rounded-lg ring-1 ring-black ring-opacity-5 bg-white w-full">
-                  <div className="p-5 divide-y-2 divide-gray-50">
+                <div className="shadow-lg rounded-lg ring-1 ring-black ring-opacity-5 bg-chestnut-100 w-full">
+                  <div className="p-5 divide-y-2 divide-chestnut-500">
                     {/* Mobile Menu Header title + Close logo */}
                     <div className="flex items-center justify-between pb-3">
                       <div>
-                        <h1 className="text-lg text-gray-500">Horizon 2000</h1>
+                        <h1 className="uppercase font-header text-lg font-bold trucate text-chestnut-900">
+                          Horizon 2000
+                        </h1>
                       </div>
                       <div className="-mr-2">
                         <button
                           onClick={e => setNavOpen(false)}
                           type="button"
-                          className="bg-white rounded-lg p-2 text-gray-500"
+                          className="bg-chestnut-100 rounded-lg p-2 text-gray-500"
                         >
                           <IconClose />
                         </button>
@@ -113,8 +115,13 @@ const Header = () => {
                           <React.Fragment key={link.url}>
                             <div>
                               {/* <Link to={link.url}>{link.text}</Link> */}
-                              <button onClick={() => scrollTo(link.url)}>
-                                {link.text}
+                              <button
+                                className="text-sm text-chestnut-700 hover:text-chestnut-900"
+                                onClick={() => scrollTo(link.url)}
+                              >
+                                <span className="font-couture uppercase">
+                                  {link.text}
+                                </span>
                               </button>
                             </div>
                           </React.Fragment>
