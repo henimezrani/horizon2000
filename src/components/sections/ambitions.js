@@ -1,7 +1,7 @@
 import * as React from "react"
 
 const Ambitions = () => (
-  <section id="nos-ambitions" className="pt-24 py-0 bg-chestnut-50">
+  <section id="ambitions" className="pt-24 py-0 bg-chestnut-50">
     <div className="w-full pb-0">
       <div class="flex items-center justify-center mx-8 lg:mx-auto">
         <div class="max-w-5xl" itemprop="articleBody">

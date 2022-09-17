@@ -11,8 +11,18 @@ const menuLinks = [
   { text: "Nos Engagements", url: "#nos-engagements" },
   { text: "Nos équipements", url: "#nos-equipements" },
   { text: "Accompagnement", url: "#accompagnement" },
-  { text: "Nos ambitions", url: "#nos-ambitions" },
+  { text: "Ambitions", url: "#ambitions" },
   { text: "Contact", url: "#contact" },
+]
+const rightMenuLinks = [
+  { text: "Accompagnement", url: "#accompagnement" },
+  { text: "Ambitions", url: "#ambitions" },
+  { text: "Contact", url: "#contact" },
+]
+const leftMenuLinks = [
+  { text: "Notre Histoire", url: "#notre-histoire" },
+  { text: "Nos Engagements", url: "#nos-engagements" },
+  { text: "Nos équipements", url: "#nos-equipements" },
 ]
 
 const Header = () => {
@@ -39,13 +49,13 @@ const Header = () => {
   }, [scrolled])
 
   return (
-    <header className="w-full" data-active={scrolled}>
+    <header className="w-full overflow-hidden" data-active={scrolled}>
       <div className={`bg-chestnut-100 ${scrolled ? "shadow-lg" : "py-4"}`}>
         {/* x-data="{ mobileMenuOpen: false}" */}
-        <div className="max-w-7xl mx-auto px-4 lg:px-6">
-          <div className="flex justify-center items-center py-2 lg:justify-start lg:space-x-10">
-            {/* Logo on the left */}
-            <div className="flex justify-start lg:flex-1 truncate">
+        <div className="max-w-7xl mx-auto px-4 xl:px-6">
+          <div className="flex justify-center items-center py-2 xl:justify-start xl:space-x-10">
+            {/* Mobile Menu if small screen */}
+            <div className="flex justify-start xl:flex-1 truncate xl:hidden">
               <Link to="/">
                 <div className="flex items-center justify-center">
                   <StaticImage
@@ -61,8 +71,7 @@ const Header = () => {
                 </div>
               </Link>
             </div>
-            {/* Mobile Menu if small screen */}
-            <div className="-mr-2 -my-2 ml-3 lg:hidden">
+            <div className="-mr-2 -my-2 ml-3 xl:hidden">
               <button
                 onClick={e => setNavOpen(true)}
                 type="button"
@@ -72,23 +81,56 @@ const Header = () => {
               </button>
             </div>
             {/* Nav Menu */}
-            <nav className="hidden lg:flex space-x-10">
-              {menuLinks.map((link, i) => (
-                <React.Fragment key={link.url}>
-                  <div className="text-sm text-chestnut-700 hover:text-chestnut-900">
-                    {/* <Link to={link.url}>{link.text}</Link> */}
-                    <button onClick={() => scrollTo(link.url)}>
-                      <span className="font-couture uppercase">
-                        {link.text}
-                      </span>
-                    </button>
+            <nav className="hidden xl:flex space-x-10">
+              <div className="xl:flex space-x-10 items-center">
+                {leftMenuLinks.map((link, i) => (
+                  <React.Fragment key={link.url}>
+                    <div className="text-sm text-chestnut-700 hover:text-chestnut-900">
+                      {/* <Link to={link.url}>{link.text}</Link> */}
+                      <button onClick={() => scrollTo(link.url)}>
+                        <span className="font-couture uppercase">
+                          {link.text}
+                        </span>
+                      </button>
+                    </div>
+                  </React.Fragment>
+                ))}
+              </div>
+              <div className="flex justify-start xl:flex-1 truncate">
+                <Link to="/">
+                  <div className="flex items-center justify-center">
+                    <StaticImage
+                      src="../images/horizon-900-sm.png"
+                      loading="eager"
+                      className="w-12 mx-2"
+                      imgClassName="h-24 w-24 object-cover"
+                      quality={100}
+                    />
+                    <h1 className="uppercase font-header text-3xl font-bold trucate text-chestnut-900 mx-2">
+                      Horizon
+                    </h1>
                   </div>
-                </React.Fragment>
-              ))}
+                </Link>
+              </div>
+              <div className="xl:flex space-x-10 items-center">
+                {rightMenuLinks.map((link, i) => (
+                  <React.Fragment key={link.url}>
+                    <div className="text-sm text-chestnut-700 hover:text-chestnut-900">
+                      {/* <Link to={link.url}>{link.text}</Link> */}
+                      <button onClick={() => scrollTo(link.url)}>
+                        <span className="font-couture uppercase">
+                          {link.text}
+                        </span>
+                      </button>
+                    </div>
+                  </React.Fragment>
+                ))}
+              </div>
             </nav>
+
             {/* Mobile Menu Container */}
             {navOpen ? (
-              <div className="absolute z-10 top-0 inset-x-0 p-2 transform origin-top-left lg:hidden">
+              <div className="absolute z-10 top-0 inset-x-0 p-2 transform origin-top-left xl:hidden">
                 <div className="shadow-lg rounded-lg ring-1 ring-black ring-opacity-5 bg-chestnut-100 w-full">
                   <div className="p-5 divide-y-2 divide-chestnut-500">
                     {/* Mobile Menu Header title + Close logo */}
