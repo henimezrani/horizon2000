@@ -101,7 +101,7 @@ const Header = () => {
                   <div className="flex items-center justify-center">
                     <StaticImage
                       src="../images/horizon-900-sm.png"
-                      loading="eager"
+                      loading="lazy"
                       className="w-12 mx-2"
                       imgClassName="h-24 w-24 object-cover"
                       quality={100}
