@@ -3,8 +3,8 @@ import * as React from "react"
 const Engagements = () => (
   <section id="nos-engagements" className="pt-24 py-0 bg-chestnut-50">
     <div className="w-full pb-0">
-      <div class="flex items-center justify-center mx-8 lg:mx-auto">
-        <div class="max-w-5xl" itemprop="articleBody">
+      <div className="flex items-center justify-center mx-8 lg:mx-auto">
+        <div className="max-w-5xl">
           <h2 className="text-3xl md:text-5xl py-8 font-title italic">
             Nos Engagements
           </h2>
@@ -18,14 +18,14 @@ const Engagements = () => (
           <p className="text-xl md:text-2xl font-body font-extralight tracking-wider py-2">
             La mise en œuvre de cette politique régulièrement revue a pour
             objectifs :
-            <ul className="list-disc ml-8 pt-2">
-              <li>
-                Maitriser l’impact sur l’environnement généré par nos activités
-              </li>
-              <li>Assurer et améliorer la satisfaction de nos clients</li>
-              <li>Préserver la santé et la sécurité de nos équipes</li>
-            </ul>
           </p>
+          <ul className="text-xl md:text-2xl font-body font-extralight tracking-wider list-disc ml-8 pt-2">
+            <li>
+              Maitriser l’impact sur l’environnement généré par nos activités
+            </li>
+            <li>Assurer et améliorer la satisfaction de nos clients</li>
+            <li>Préserver la santé et la sécurité de nos équipes</li>
+          </ul>
         </div>
       </div>
     </div>

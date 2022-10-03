@@ -1,12 +1,10 @@
 import * as React from "react"
 
-import { StaticImage } from "gatsby-plugin-image"
-
 const Accompagnement = () => (
   <section id="accompagnement" className="pt-24 py-0 bg-chestnut-50">
     <div className="w-full pb-0">
-      <div class="flex items-center justify-center mx-8 lg:mx-auto">
-        <div class="max-w-5xl" itemprop="articleBody">
+      <div className="flex items-center justify-center mx-8 lg:mx-auto">
+        <div className="max-w-5xl">
           <h2 className="text-3xl md:text-5xl py-8 font-title italic">
             Accompagnement des jeunes marques
           </h2>

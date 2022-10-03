@@ -59,6 +59,7 @@ const Header = () => {
               <Link to="/">
                 <div className="flex items-center justify-center">
                   <StaticImage
+                    alt="Logo Horizon2000"
                     src="../images/horizon-900-sm.png"
                     loading="eager"
                     className="w-12 mx-2"
@@ -100,6 +101,7 @@ const Header = () => {
                 <Link to="/">
                   <div className="flex items-center justify-center">
                     <StaticImage
+                      alt="Logo Horizon2000"
                       src="../images/horizon-900-sm.png"
                       loading="lazy"
                       className="w-12 mx-2"

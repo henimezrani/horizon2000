@@ -4,6 +4,7 @@ import IconFailed from "../icons/icon-failed"
 import IconPin from "../icons/icon-pin"
 import IconEmail from "../icons/icon-email"
 import IconPhone from "../icons/icon-phone"
+import axios from "axios"
 
 const Contact = () => {
   const [formSuccess, setFormSuccess] = React.useState(false)
@@ -20,11 +21,17 @@ const Contact = () => {
 
   const sendMail = event => {
     event.preventDefault()
-    setFormError(false)
-    setFormSuccess(false)
-    console.log(this.values)
-    const sent = true
-    sent ? setFormSuccess(true) : setFormError(true)
+    console.log(values)
+    axios
+      .post("http://localhost:3030/send", values)
+      .then(() => {
+        setFormSuccess(true)
+        console.log("sent")
+      })
+      .catch(() => {
+        setFormSuccess(false)
+        console.log("error")
+      })
   }
 
   const handleInputChange = event => {
@@ -38,7 +45,7 @@ const Contact = () => {
     <section id="contact" className="pt-24 py-0 bg-chestnut-50">
       <div className="w-full pb-0">
         <div className="flex items-center justify-center mx-8 lg:mx-auto">
-          <div className="max-w-5xl" itemprop="articleBody">
+          <div className="max-w-5xl">
             <h2 className="text-3xl md:text-5xl py-8 font-title italic w-full">
               Contact
             </h2>
@@ -56,9 +63,9 @@ const Contact = () => {
                 <iframe
                   className="h-80 w-full"
                   src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12776.695513038529!2d10.1742005!3d36.8143531!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x56e13bcccb5d8c35!2sHorizon%202000!5e0!3m2!1sen!2stn!4v1663455462942!5m2!1sen!2stn"
-                  allowfullscreen=""
+                  allowFullScreen=""
                   loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
+                  referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
               </div>
               <div className="flex flex-col md:pl-3 w-full md:w-1/2 h-auto">
@@ -130,7 +137,7 @@ const Contact = () => {
                     <div className="md:pr-3 w-full md:w-1/2">
                       <label
                         className="uppercase font-body text-lg md:text-xl font-extralight tracking-wider"
-                        for="name"
+                        htmlFor="name"
                       >
                         Nom
                       </label>
@@ -146,7 +153,7 @@ const Contact = () => {
                     <div className="md:pl-3 w-full md:w-1/2">
                       <label
                         className="uppercase font-body text-lg md:text-xl font-extralight tracking-wider"
-                        for="name"
+                        htmlFor="name"
                       >
                         Email
                       </label>
@@ -164,7 +171,7 @@ const Contact = () => {
                     <div className="w-full">
                       <label
                         className="uppercase font-body text-lg md:text-xl font-extralight tracking-wider"
-                        for="subject"
+                        htmlFor="subject"
                       >
                         Objet
                       </label>
@@ -182,7 +189,7 @@ const Contact = () => {
                     <div className="w-full">
                       <label
                         className="uppercase font-body text-lg md:text-xl font-extralight tracking-wider"
-                        for="message"
+                        htmlFor="message"
                       >
                         Message
                       </label>

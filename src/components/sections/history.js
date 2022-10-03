@@ -12,7 +12,7 @@ const History = () => (
           className="w-full h-96 object-cover"
           imgClassName="w-full h-96 object-cover"
           quality={100}
-          alt=""
+          alt="Horizon2000"
         />
         <div className="absolute text-2xl md:text-3xl lg:text-4xl text-center text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <h1 className="font-title tracking-widest leading-10">
@@ -21,8 +21,8 @@ const History = () => (
           </h1>
         </div>
       </div>
-      <div class="flex items-center justify-center mx-8 lg:mx-auto">
-        <div class="max-w-5xl pt-24" itemprop="articleBody">
+      <div className="flex items-center justify-center mx-8 lg:mx-auto">
+        <div className="max-w-5xl pt-24">
           <h2 className="text-3xl md:text-5xl py-8 font-title italic">
             Notre Histoire
           </h2>
