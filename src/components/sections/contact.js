@@ -45,15 +45,15 @@ const Contact = () => {
     <section id="contact" className="pt-24 py-0 bg-chestnut-50">
       <div className="w-full pb-0">
         <div className="flex items-center justify-center mx-8 lg:mx-auto">
-          <div className="max-w-5xl">
+          <div className="max-w-5xl w-full">
             <h2 className="text-3xl md:text-5xl py-8 font-title italic w-full">
               Contact
             </h2>
             <div className="flex text-xl md:text-2xl font-body font-extralight tracking-wider py-2">
-              Depuis plus de 35 ans les ateliers Horizon ont collaboré avec les
-              plus grands acteurs du monde pour Hommes, Femmes et Enfants. Cela
-              a permis à nos équipes d’acquérir un savoir-faire unique et donc
-              de proposer une palette de services riche et variée.
+              <p className="w-full">
+                Une collaboration, une demande...? N'hésitez pas à nous
+                contacter.
+              </p>
             </div>
             <div className="flex flex-col md:flex-row mb-3 w-full text-xl md:text-2xl font-body font-extralight tracking-wider py-2">
               <div className="md:pr-3 w-full md:w-1/2">

@@ -1,6 +1,7 @@
 const express = require("express")
 const cors = require("cors")
 const nodemailer = require("nodemailer")
+require("dotenv").config()
 const app = express()
 const PORT = process.env.PORT || 3030
 
@@ -13,19 +14,22 @@ const contactAddress = "henimezrani@gmail.com"
 const mailer = nodemailer.createTransport({
   service: "Gmail",
   auth: {
-    user: "henimezrani@gmail.com",
-    pass: "UPDATETHIS",
+    user: contactAddress,
+    pass: process.env.PASSWORD,
   },
 })
 
 app.post("/send", (req, res) => {
-  console.log(req.body)
   mailer.sendMail(
     {
-      from: req.body.email,
+      from: contactAddress,
       to: [contactAddress],
       subject: req.body.subject || "[No subject]",
-      html: req.body.message || "[No message]",
+      html: `
+      from: ${req.body.email} <br>
+      name: ${req.body.name} <br>
+      message: ${req.body.message || "[No message]"}
+      `,
     },
     function (err, info) {
       if (err) {
@@ -33,7 +37,6 @@ app.post("/send", (req, res) => {
         // Google doesnt support email and password anymore, find another solution
         return res.status(500).send(err)
       }
-      console.log("sent")
       res.json({ success: true })
     }
   )
